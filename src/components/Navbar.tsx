@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const services = [
     { label: "Salesforce", href: "/services/salesforce" },
@@ -58,16 +59,8 @@ export default function Navbar() {
 
             <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3.5 lg:px-8">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-1">
-                    <span className={`text-2xl font-bold tracking-tight ${scrolled ? "text-brand-navy" : "text-white"}`}>
-                        Kanshe
-                    </span>
-                    <span className="relative">
-                        <span className={`text-2xl font-bold tracking-tight ${scrolled ? "text-brand-navy" : "text-white"}`}>
-                            Infotech
-                        </span>
-                        <span className="absolute -bottom-0.5 left-[calc(50%-3px)] w-1.5 h-1.5 rounded-full bg-brand-magenta" />
-                    </span>
+                <Link href="/" className="flex items-center gap-2">
+                    <Image src="/logo.png" alt="Kanshe Infotech" width={160} height={48} className={`h-10 md:h-12 w-auto object-contain transition-all duration-300 ${!scrolled ? "brightness-0 invert" : ""}`} priority />
                 </Link>
 
                 {/* Desktop Nav */}
@@ -164,9 +157,9 @@ export default function Navbar() {
                             className="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl overflow-y-auto"
                         >
                             <div className="flex items-center justify-between p-6 border-b border-slate-100">
-                                <span className="text-xl font-bold text-brand-navy">
-                                    Kanshe <span className="relative">Infotech<span className="absolute -bottom-0.5 left-[calc(50%-3px)] w-1.5 h-1.5 rounded-full bg-brand-magenta" /></span>
-                                </span>
+                                <Link href="/" className="block">
+                                    <Image src="/logo.png" alt="Kanshe Infotech" width={140} height={40} className="h-8 w-auto object-contain" />
+                                </Link>
                                 <button
                                     onClick={() => setMobileOpen(false)}
                                     className="p-2 rounded-lg text-slate-500 hover:bg-slate-100"

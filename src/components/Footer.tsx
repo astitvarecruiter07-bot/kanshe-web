@@ -3,6 +3,7 @@
 import AnimatedSection from "./AnimatedSection";
 import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const servicesLinks = [
     { label: "Salesforce", href: "/services/salesforce" },
@@ -74,13 +75,7 @@ export default function Footer() {
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 pb-10 border-b border-slate-700/50">
                         <div>
                             <Link href="/" className="inline-block">
-                                <span className="text-2xl font-bold text-white tracking-tight">
-                                    Kanshe{" "}
-                                    <span className="relative">
-                                        Infotech
-                                        <span className="absolute -bottom-0.5 left-[calc(50%-3px)] w-1.5 h-1.5 rounded-full bg-brand-magenta" />
-                                    </span>
-                                </span>
+                                <Image src="/logo.png" alt="Kanshe Infotech" width={160} height={48} className="h-10 md:h-12 w-auto object-contain brightness-0 invert" />
                             </Link>
                             <p className="text-sm text-slate-400 mt-3 max-w-sm leading-relaxed">
                                 An award-winning agency specializing in direct hire, temp to hire staffing & full-service executive search services focused on IT staffing.
